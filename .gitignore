@@ -31,3 +31,5 @@ dist-ssr
 # Kişisel notlar / telefon numarası içeren dosyalar
 görevlerimiz.txt
 /*.pdf
+
+.claude/
