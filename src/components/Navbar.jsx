@@ -19,9 +19,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="container navbar__inner">
         <Link to="/" className="navbar__brand" onClick={close} aria-label={`${SITE.name} ana sayfa`}>
-          <span className="navbar__logo" aria-hidden="true">
-            HSD
-          </span>
+          <img src="/logo.png" alt="" className="navbar__logo-img" width="854" height="257" />
           <span className="navbar__name">Bolu</span>
         </Link>
 

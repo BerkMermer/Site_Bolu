@@ -1,0 +1,7 @@
+/*
+ * Tailwind v4: yalnızca tema + utility sınıfları.
+ * preflight yok: mevcut BEM tabanlı index.css sıfırlamaları bozulmasın.
+ */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities) important;

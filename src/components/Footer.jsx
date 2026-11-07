@@ -12,10 +12,8 @@ export default function Footer() {
       <div className="container footer__grid">
         <div className="footer__about">
           <Link to="/" className="footer__brand">
-            <span className="navbar__logo" aria-hidden="true">
-              HSD
-            </span>
-            <span>{SITE.name}</span>
+            <img src="/logo.png" alt="" className="navbar__logo-img" width="854" height="257" />
+            <span className="navbar__name">Bolu</span>
           </Link>
           <p>{SITE.description}</p>
         </div>

@@ -16,7 +16,7 @@ export const SITE = {
   tagline: 'Teknolojiyi birlikte öğren, üret ve paylaş.',
   description:
     "HSD Bolu, Bolu Abant İzzet Baysal Üniversitesi'nde yazılım ve teknolojiye ilgi duyan öğrencileri workshop, bootcamp ve hackathonlarla bir araya getiren Huawei Student Developers topluluğudur.",
-  email: 'iletisim@example.com', // TODO: topluluk e-posta adresi
+  email: 'hsdbaibu@gmail.com',
 }
 
 /** Üst menü bağlantıları. "Bize Katıl" ayrıca buton olarak gösterilir. */
@@ -30,10 +30,11 @@ export const NAV_LINKS = [
 
 /** Sosyal medya hesapları. url boş bırakılan hesap sitede gösterilmez. */
 export const SOCIAL_LINKS = [
-  { id: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/' }, // TODO
-  { id: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/' }, // TODO
-  { id: 'github', label: 'GitHub', url: 'https://github.com/' }, // TODO
-  { id: 'youtube', label: 'YouTube', url: '' }, // TODO: varsa ekleyin
+  { id: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/hsdbolu/' },
+  { id: 'linkedin', label: 'LinkedIn', url: 'https://www.linkedin.com/company/hsd-bolu' },
+  { id: 'medium', label: 'Medium', url: 'https://medium.com/@hsdbolu' },
+  { id: 'github', label: 'GitHub', url: '' },
+  { id: 'youtube', label: 'YouTube', url: '' },
 ]
 
 /** Katıl sayfasındaki topluluk grupları. */
@@ -52,13 +53,19 @@ export const COMMUNITY_LINKS = [
   },
 ]
 
-/** Ana sayfadaki "Sayılarla HSD Bolu" bölümü. TODO: gerçek sayılarla güncelleyin. */
+/** Ana sayfa vitrinindeki sayaçlar. */
 export const STATS = [
   { value: '250+', label: 'Üye' },
-  { value: '20+', label: 'Etkinlik' },
-  { value: '3', label: 'Hackathon' },
-  { value: '15+', label: 'Konuşmacı' },
+  { value: '5+', label: 'Etkinlik', sub: 'Devamı Geliyor' },
+  { value: '4', label: 'Medium Yazısı' },
 ]
+
+/** Ana sayfa vitrinindeki öne çıkan Medium yazısı. */
+export const FEATURED_ARTICLE = {
+  title: 'Wave Function Collapse (WFC): Oyunlardaki Sonsuz Dünyaların Sırrı',
+  cover: 'https://cdn-images-1.medium.com/max/1024/0*BHGfsmeWtj4tqcF2.jpeg',
+  url: 'https://medium.com/huawei-student-developers-turkiye/oyunlardaki-sonsuz-d%C3%BCnyalar%C4%B1n-s%C4%B1rr%C4%B1-wave-function-collapse-ile-tan%C4%B1%C5%9F%C4%B1n-fadcda58195b',
+}
 
 /** Etkinlik türleri: API'deki "type" alanı → ekranda görünen ad. */
 export const EVENT_TYPES = {

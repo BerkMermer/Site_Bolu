@@ -11,29 +11,31 @@
 /* ============================== 1. Değişkenler ============================== */
 
 :root {
-  /* Marka (HSD / Huawei kırmızısı; kurumsal kimlik onayından sonra güncelleyin) */
-  --brand: #c7000b;
-  --brand-dark: #9e0009;
-  --brand-soft: #fdecec;
+  /* Ömer'in paleti: koyu orman yeşili + kum/altın */
+  --brand: #dda15e;
+  --brand-dark: #c98a45;
+  --brand-soft: rgb(221 161 94 / 0.16);
 
   /* Metin ve yüzeyler */
-  --text: #1d1d24;
-  --text-muted: #5d5d6b;
-  --bg: #ffffff;
-  --bg-alt: #f6f6f8;
-  --surface: #ffffff;
-  --border: #e3e3e8;
+  --text: #f5f0e6;
+  --text-muted: rgb(245 240 230 / 0.72);
+  --bg: #0a1913;
+  --bg-alt: #0d1f18;
+  --surface: rgb(245 240 230 / 0.05);
+  --border: rgb(245 240 230 / 0.12);
 
   /* Durum renkleri */
-  --success: #137a3a;
-  --success-soft: #e7f6ec;
-  --danger: #b42318;
-  --danger-soft: #fdeceb;
-  --warning: #8a5a00;
-  --warning-soft: #fff6e0;
+  --success: #52b788;
+  --success-soft: rgb(82 183 136 / 0.16);
+  --danger: #f08a7e;
+  --danger-soft: rgb(240 138 126 / 0.16);
+  --warning: #edb679;
+  --warning-soft: rgb(237 182 121 / 0.16);
 
   /* Tipografi */
-  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-sans: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: dark;
   --fs-sm: 0.875rem;
   --fs-base: 1rem;
   --fs-lg: 1.125rem;
@@ -50,7 +52,7 @@
   --shadow-sm: 0 1px 2px rgb(16 16 24 / 0.06);
   --shadow: 0 6px 24px rgb(16 16 24 / 0.08);
   --header-h: 64px;
-  --focus: 0 0 0 3px rgb(199 0 11 / 0.35);
+  --focus: 0 0 0 3px rgb(221 161 94 / 0.4);
 }
 
 @media (min-width: 768px) {
@@ -101,7 +103,9 @@ h1,
 h2,
 h3 {
   margin: 0 0 0.5em;
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--text);
   text-wrap: balance;
@@ -185,14 +189,15 @@ dd {
   top: -100px;
   z-index: 100;
   padding: 0.5rem 1rem;
-  background: var(--text);
-  color: #fff;
-  border-radius: var(--radius-sm);
+  background: var(--brand);
+  color: var(--bg);
+  border-radius: 999px;
+  font-weight: 600;
 }
 
 .skip-link:focus {
   top: 0.75rem;
-  color: #fff;
+  color: var(--bg);
 }
 
 .muted {
@@ -282,46 +287,46 @@ dd {
 }
 
 .btn--primary {
-  background: var(--brand);
-  color: #fff;
+  background: linear-gradient(135deg, #edb679, var(--brand) 55%, var(--brand-dark));
+  color: var(--bg);
+  box-shadow: 0 10px 34px -10px rgb(221 161 94 / 0.75);
 }
 
 .btn--primary:hover:not(:disabled) {
-  background: var(--brand-dark);
-  color: #fff;
+  background: linear-gradient(135deg, #f0c38a, var(--brand) 55%, var(--brand-dark));
+  color: var(--bg);
 }
 
 .btn--outline {
-  border-color: var(--brand);
-  background: transparent;
-  color: var(--brand);
+  border-color: rgb(245 240 230 / 0.28);
+  background: var(--surface);
+  color: var(--text);
 }
 
 .btn--outline:hover:not(:disabled) {
-  background: var(--brand-soft);
-  color: var(--brand-dark);
+  background: rgb(245 240 230 / 0.09);
+  color: var(--text);
 }
 
-/* Koyu/kırmızı zemin üzerinde kullanılır (hero, CTA). */
+/* Koyu zemin üzerinde kum rengi dolgu. */
 .btn--light {
-  background: #fff;
-  color: var(--brand);
+  background: linear-gradient(135deg, #edb679, var(--brand) 55%, var(--brand-dark));
+  color: var(--bg);
 }
 
 .btn--light:hover:not(:disabled) {
-  background: var(--brand-soft);
-  color: var(--brand-dark);
+  color: var(--bg);
 }
 
 .btn--ghost {
-  border-color: rgb(255 255 255 / 0.6);
-  background: transparent;
-  color: #fff;
+  border-color: rgb(255 255 255 / 0.25);
+  background: rgb(255 255 255 / 0.05);
+  color: var(--text);
 }
 
 .btn--ghost:hover:not(:disabled) {
   background: rgb(255 255 255 / 0.12);
-  color: #fff;
+  color: var(--text);
 }
 
 /* ============================== 5. Menü ============================== */
@@ -330,9 +335,9 @@ dd {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgb(255 255 255 / 0.92);
-  backdrop-filter: saturate(180%) blur(10px);
-  border-bottom: 1px solid var(--border);
+  background: rgb(10 25 19 / 0.55);
+  backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid transparent;
 }
 
 .navbar__inner {
@@ -354,17 +359,18 @@ dd {
   text-decoration: none;
 }
 
-.navbar__logo {
-  display: inline-grid;
-  place-items: center;
-  height: 2rem;
-  padding-inline: 0.5rem;
-  border-radius: var(--radius-sm);
-  background: var(--brand);
-  color: #fff;
-  font-size: var(--fs-sm);
-  font-weight: 800;
-  letter-spacing: 0.04em;
+.navbar__logo-img {
+  height: 42px;
+  width: auto;
+}
+
+.navbar__name {
+  padding-left: 0.75rem;
+  border-left: 1px solid rgb(245 240 230 / 0.28);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--brand);
 }
 
 .navbar__toggle {
@@ -436,6 +442,7 @@ dd {
 
 .navbar__menu.is-open {
   display: block;
+  background: rgb(10 25 19 / 0.97);
 }
 
 .navbar__links {
@@ -505,18 +512,19 @@ dd {
 .footer {
   margin-top: auto;
   padding-top: 3rem;
-  background: #16161c;
-  color: #c9c9d3;
+  background: #07140f;
+  color: var(--text-muted);
   font-size: var(--fs-sm);
+  border-top: 1px solid var(--border);
 }
 
 .footer a {
-  color: #e9e9ef;
+  color: var(--text);
   text-decoration: none;
 }
 
 .footer a:hover {
-  color: #fff;
+  color: var(--brand);
   text-decoration: underline;
 }
 
@@ -540,7 +548,11 @@ dd {
 
 .footer__brand {
   margin-bottom: 0.75rem;
-  color: #fff !important;
+  color: var(--text) !important;
+}
+
+.footer .navbar__logo-img {
+  height: 48px;
 }
 
 .footer__about p {
@@ -552,7 +564,7 @@ dd {
   font-size: var(--fs-sm);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--text);
 }
 
 .footer__list {
@@ -607,7 +619,7 @@ dd {
 
 .page-header {
   padding-block: clamp(2.5rem, 2rem + 3vw, 4rem) clamp(1.5rem, 1rem + 2vw, 2.5rem);
-  background: linear-gradient(180deg, var(--brand-soft), var(--bg));
+  background: radial-gradient(ellipse 80% 60% at 70% 0%, #12301f 0%, var(--bg) 70%);
 }
 
 .page-header__title {
@@ -796,13 +808,14 @@ dd {
 }
 
 .cta--primary {
-  background: var(--brand);
-  color: #fff;
+  background: linear-gradient(160deg, #12301f, #0d1f18);
+  color: var(--text);
+  border: 1px solid var(--border);
 }
 
 .cta--primary .cta__title,
 .cta--primary p {
-  color: #fff;
+  color: var(--text);
 }
 
 .cta__title {
@@ -883,31 +896,32 @@ dd {
   display: grid;
   place-items: center;
   height: 100%;
-  color: #fff;
+  color: var(--text);
+  font-family: var(--font-display);
   font-size: var(--fs-xl);
-  font-weight: 800;
+  font-weight: 400;
   letter-spacing: 0.02em;
-  background: linear-gradient(135deg, var(--brand), #7a0007);
+  background: linear-gradient(135deg, #12301f, #0a1913);
 }
 
 .event-card__placeholder--workshop {
-  background: linear-gradient(135deg, #c7000b, #7a0007);
+  background: linear-gradient(135deg, #1a3d2c, #0a1913);
 }
 
 .event-card__placeholder--bootcamp {
-  background: linear-gradient(135deg, #2b2d42, #8d0b15);
+  background: linear-gradient(135deg, #12301f, #0d1f18);
 }
 
 .event-card__placeholder--hackathon {
-  background: linear-gradient(135deg, #16161c, #c7000b);
+  background: linear-gradient(135deg, #3a2a12, #0a1913);
 }
 
 .event-card__placeholder--seminer {
-  background: linear-gradient(135deg, #5a2a83, #c7000b);
+  background: linear-gradient(135deg, #1e3a32, #0a1913);
 }
 
 .event-card__placeholder--sosyal {
-  background: linear-gradient(135deg, #d9480f, #c7000b);
+  background: linear-gradient(135deg, #2a2418, #0a1913);
 }
 
 .event-card__date {
@@ -1232,7 +1246,7 @@ dd {
 .chip.is-active {
   border-color: var(--brand);
   background: var(--brand);
-  color: #fff;
+  color: var(--bg);
 }
 
 .detail-layout {
@@ -1343,7 +1357,7 @@ dd {
 .field__control {
   width: 100%;
   padding: 0.7rem 0.85rem;
-  border: 1px solid #c9c9d3;
+  border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--surface);
   color: var(--text);
@@ -1354,7 +1368,7 @@ dd {
 }
 
 .field__control:hover {
-  border-color: #a5a5b3;
+  border-color: rgb(245 240 230 / 0.28);
 }
 
 .field__control:focus {
